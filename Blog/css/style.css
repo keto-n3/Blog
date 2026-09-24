@@ -1,0 +1,734 @@
+```css
+/* =====================================================
+   MY ENGLISH BLOG
+   Main Stylesheet
+   ===================================================== */
+
+
+/* =====================================================
+   1. GENERAL SETTINGS
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   2. COLORS
+   ===================================================== */
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --secondary: #0f172a;
+    --text: #334155;
+    --light: #f8fafc;
+    --white: #ffffff;
+    --border: #e2e8f0;
+    --success: #16a34a;
+}
+
+
+/* =====================================================
+   3. HEADER / NAVIGATION
+   ===================================================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+
+    min-height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 25px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+
+/* =====================================================
+   4. HERO
+   ===================================================== */
+
+.hero {
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background:
+        linear-gradient(
+            rgba(15, 23, 42, 0.80),
+            rgba(37, 99, 235, 0.75)
+        ),
+        url("../images/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-subtitle {
+    font-size: 14px;
+    letter-spacing: 4px;
+    font-weight: 600;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 7vw, 72px);
+    line-height: 1.15;
+
+    margin-bottom: 25px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 650px;
+    margin: 0 auto 35px;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 14px 30px;
+
+    background: white;
+    color: var(--primary);
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =====================================================
+   5. GENERAL SECTION
+   ===================================================== */
+
+.section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 100px 25px;
+}
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+.section-title span {
+    display: block;
+
+    color: var(--primary);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+.section-title h2 {
+    font-size: clamp(30px, 5vw, 45px);
+
+    color: var(--secondary);
+
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #64748b;
+}
+
+
+/* =====================================================
+   6. ABOUT ME
+   ===================================================== */
+
+.about {
+    background: white;
+
+    max-width: none;
+
+    padding-left: max(25px, calc((100vw - 1150px) / 2));
+    padding-right: max(25px, calc((100vw - 1150px) / 2));
+}
+
+.about-content {
+    display: grid;
+
+    grid-template-columns: 350px 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 20px 40px rgba(15, 23, 42, 0.12);
+}
+
+.about-text h3 {
+    font-size: 30px;
+
+    color: var(--secondary);
+
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: var(--text);
+
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   7. BLOG POSTS GRID
+   ===================================================== */
+
+.blog {
+    background: #f8fafc;
+
+    max-width: none;
+
+    padding-left: max(25px, calc((100vw - 1150px) / 2));
+    padding-right: max(25px, calc((100vw - 1150px) / 2));
+}
+
+.posts-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.post-card {
+    background: white;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+
+    transition: 0.35s;
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.04);
+}
+
+.post-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 40px rgba(15, 23, 42, 0.12);
+}
+
+.post-card img {
+    width: 100%;
+
+    height: 150px;
+
+    object-fit: cover;
+}
+
+.post-content {
+    padding: 25px;
+}
+
+.category {
+    display: inline-block;
+
+    color: var(--primary);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 10px;
+}
+
+.post-content h3 {
+    font-size: 22px;
+
+    color: var(--secondary);
+
+    margin-bottom: 12px;
+}
+
+.post-content p {
+    color: #64748b;
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+}
+
+.read-more {
+    color: var(--primary);
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    font-size: 14px;
+}
+
+.read-more:hover {
+    color: var(--primary-dark);
+}
+
+
+/* =====================================================
+   8. ACADEMIC POSTS
+   ===================================================== */
+
+.post-card.academic {
+    border-top: 4px solid var(--primary);
+}
+
+.academic-post {
+    background: #f1f5f9;
+}
+
+
+/* =====================================================
+   9. DETAILED POSTS
+   ===================================================== */
+
+.detailed-posts {
+    background: white;
+}
+
+.detailed-post {
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 100px 25px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.detailed-post:last-child {
+    border-bottom: none;
+}
+
+.detailed-post .section-title {
+    text-align: left;
+
+    margin-bottom: 30px;
+}
+
+.detailed-post .section-title h2 {
+    font-size: 40px;
+}
+
+.detailed-post p {
+    color: var(--text);
+
+    margin-bottom: 20px;
+
+    font-size: 16px;
+}
+
+.detailed-post h3 {
+    color: var(--secondary);
+
+    margin-top: 35px;
+
+    margin-bottom: 15px;
+
+    font-size: 24px;
+}
+
+
+/* =====================================================
+   10. AUDIO
+   ===================================================== */
+
+.audio-box {
+    margin-top: 35px;
+
+    padding: 30px;
+
+    background: #eff6ff;
+
+    border-radius: 20px;
+
+    border: 1px solid #dbeafe;
+}
+
+.audio-box h3 {
+    margin-top: 0;
+
+    color: var(--primary);
+}
+
+.audio-box audio {
+    width: 100%;
+
+    margin-top: 10px;
+}
+
+
+/* =====================================================
+   11. VIDEO
+   ===================================================== */
+
+.video-container {
+    position: relative;
+
+    width: 100%;
+
+    padding-bottom: 56.25%;
+
+    margin-top: 35px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #0f172a;
+}
+
+.video-container iframe {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border: none;
+}
+
+
+/* =====================================================
+   12. NEWS BOX
+   ===================================================== */
+
+.news-box {
+    margin-top: 30px;
+
+    padding: 30px;
+
+    background: #f8fafc;
+
+    border-left: 5px solid var(--primary);
+
+    border-radius: 10px;
+}
+
+.news-box h3 {
+    margin-top: 0;
+
+    color: var(--primary);
+}
+
+
+/* =====================================================
+   13. LISTS
+   ===================================================== */
+
+.detailed-post ul {
+    margin: 20px 0 30px 25px;
+}
+
+.detailed-post li {
+    margin-bottom: 10px;
+
+    color: var(--text);
+}
+
+
+/* =====================================================
+   14. REFLECTION
+   ===================================================== */
+
+.reflection {
+    margin-top: 40px;
+
+    padding: 30px;
+
+    background: #eff6ff;
+
+    border-radius: 20px;
+
+    border: 1px solid #dbeafe;
+}
+
+.reflection h3 {
+    margin-top: 0;
+
+    color: var(--primary);
+}
+
+
+/* =====================================================
+   15. VOCABULARY
+   ===================================================== */
+
+.vocabulary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin: 25px 0 35px;
+}
+
+.vocabulary div {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 15px 20px;
+
+    background: #f8fafc;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+}
+
+.vocabulary strong {
+    color: var(--secondary);
+}
+
+.vocabulary span {
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   16. FOOTER
+   ===================================================== */
+
+.footer {
+    background: var(--secondary);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 50px 20px;
+}
+
+.footer h3 {
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+.footer p {
+    color: #94a3b8;
+
+    margin-bottom: 5px;
+}
+
+
+/* =====================================================
+   17. RESPONSIVE DESIGN
+   ===================================================== */
+
+/* Tablets */
+
+@media (max-width: 900px) {
+
+    .posts-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+
+        max-width: 600px;
+
+        margin: auto;
+    }
+
+    .about-image {
+        max-width: 350px;
+
+        margin: auto;
+    }
+
+}
+
+
+/* Phones */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 10px;
+
+        padding: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .hero {
+        min-height: 550px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .posts-container {
+        grid-template-columns: 1fr;
+    }
+
+    .detailed-post {
+        padding: 70px 20px;
+    }
+
+    .detailed-post .section-title h2 {
+        font-size: 30px;
+    }
+
+    .vocabulary {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+```css
+/* =====================================================
+   BLOG CARD ANIMATION
+   ===================================================== */
+
+.post-card {
+    opacity: 0;
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.post-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Limitar el texto de las tarjetas */
+.post-card p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+```
