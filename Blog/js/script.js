@@ -117,4 +117,16 @@ function togglePost(button) {
         button.textContent = "Read More";
     }
 }
+
+function togglePost(button) {
+    const postText = button.previousElementSibling;
+
+    postText.classList.toggle("expanded");
+
+    if (postText.classList.contains("expanded")) {
+        button.textContent = "Read Less ↑";
+    } else {
+        button.textContent = "Read More →";
+    }
+}
 ```
