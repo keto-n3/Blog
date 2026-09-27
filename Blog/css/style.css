@@ -752,3 +752,65 @@ body {
 
     cursor: pointer;
 }
+
+/* =========================
+   READ MORE / READ LESS
+========================= */
+
+.post-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post-text.expanded {
+    display: block;
+}
+
+.read-more {
+    border: none;
+    background: none;
+    padding: 0;
+    margin-top: 10px;
+
+    color: #667eea;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+/* =========================
+   READ MORE / READ LESS
+========================= */
+
+.post-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post-text.expanded {
+    display: block;
+}
+
+.read-more {
+    border: none;
+    background: none;
+    padding: 0;
+    margin-top: 10px;
+
+    color: #667eea;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
