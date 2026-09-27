@@ -732,3 +732,23 @@ body {
     overflow: hidden;
 }
 ```
+.post-extra {
+    display: none;
+}
+
+.post-extra.show {
+    display: block;
+}
+
+.read-more {
+    border: none;
+    background: none;
+    padding: 0;
+    margin-top: 10px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
