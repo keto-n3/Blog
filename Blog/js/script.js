@@ -105,4 +105,16 @@ if (footerYear) {
         `© ${currentYear} My English Blog`;
 
 }
+
+function togglePost(button) {
+    const extraText = button.previousElementSibling;
+
+    extraText.classList.toggle("show");
+
+    if (extraText.classList.contains("show")) {
+        button.textContent = "Read Less";
+    } else {
+        button.textContent = "Read More";
+    }
+}
 ```
